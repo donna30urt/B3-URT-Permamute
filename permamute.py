@@ -57,9 +57,10 @@ class PermamutePlugin(b3.plugin.Plugin):
             if sname == 'None':
                 return
             else:
-                self.console.write("mute %s" % client.cid)
+                self.console.write("mute %s 9999999999999" % client.cid)
                 client.message('^3You are ^1PERMANENTLY MUTED')
                 client.message('^3Request an ^2un-mute ^3via ^5discord!')
+                self.console.say("%s ^3is ^1permanently muted" % client.exactName)
 
     def cmd_pbmute(self, data, client, cmd=None):
         handler = self._adminPlugin.parseUserCmd(data)
